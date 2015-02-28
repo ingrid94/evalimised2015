@@ -6,12 +6,12 @@
     </head>
 	<body>
 		<div id="container">
-			<h1>E-valimised2015<h1/>
+			<h1>E-valimised 2015<h1/>
 	
 				<ul class id="navigation">
 					<a href="index.html" class="button"><li>Main</li></a>
 					<a href="Nimekiri.html" class="button"><li>Nimekiri</li></a>
-					<a href="TulemusedReaalajas.html" class="button"><li>Tulemused Reaalajas</li></a>
+					<a href="TulemusedReaalajas.html" class="button"><li>Tulemused reaalajas</li></a>
 					<a href="Statistika.html" class="button"><li>Statistika</li></a>
 					<a href="Hääletamine.html" class="button"><li>Hääletamine</li></a>
 				</ul>
@@ -20,6 +20,28 @@
 				<p>Üliäge valimisnimekiri!</p>
 			
 			</div>
+			<form method="post" action="search.php?go" id="searchform"> 
+				<p>Otsing
+				Piirkond:
+				<select>
+					<option selected="selected">...</option>
+					<option value="a1">Piirkond1</option>
+					<option value="a2">Piirkond2</option>
+					<option value="a3">Piirkond3</option>
+					<option value="a4">Piirkond4</option>
+				</select><br>
+				Erakond: 
+				<select>
+					<option selected="selected">...</option>
+					<option value="e1">Erakond1</option>
+					<option value="e2">Erakond2</option>
+					<option value="e3">Erakond3</option>
+					<option value="e4">Erakond4</option>
+				</select><br>
+				Kandidaat: <input type="text" name="Kandidaat"><br>
+				<input type="submit" name="submit" value ="Otsi">
+				</p>
+			</form>
 		</div>
     </body>
 	
