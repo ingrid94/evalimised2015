@@ -1,0 +1,21 @@
+<style type="text/css">
+
+#navigation {
+	border-style: solid;
+}
+#navigation li {
+	font-family: Tahoma, Geneva, sans-serif;
+	display: inline-block;
+}
+#navigation li a{
+	display: block;
+}
+#content  {
+	font-family: Tahoma, Geneva, sans-serif;
+    width: 844px;
+	margin-right: auto;
+	border-style: solid;
+	border-top-width: 1px;
+	border-left-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
