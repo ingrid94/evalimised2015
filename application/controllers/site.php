@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+class Site extends CI_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -21,9 +21,21 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('index.html');
 	}
-	public function statistika()
+	public function statistika ($page='Statistika.html')
 	{
-		$this->load->view('Statistika.html');
+		$this->load->view($page);
+	}
+	public function haaletamine ($page='Hääletamine.html')
+	{
+		$this->load->view($page);
+	}
+	public function nimekiri ($page='Nimekiri.html')
+	{
+		$this->load->view($page);
+	}
+	public function tulemused ($page='TulemusedReaalajas.html')
+	{
+		$this->load->view($page);
 	}
 }
 
