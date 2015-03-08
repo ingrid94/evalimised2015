@@ -1,12 +1,15 @@
 <style type="text/css">
 
 #navigation {
+/* Important declaration, removing it will make list members appear above each other! */
 }
+
 #navigation li {
+	font-size:18px;
+	font-weight: bold;
 	font-family: Tahoma, Geneva, sans-serif;
 	display: inline-block;
 	border-style: solid;
-	border-corner-shape: curve;
 	border-radius: 10px;
 	border-width: 2px;
 	padding-top: 3px;
@@ -16,16 +19,16 @@
 }
 #navigation li a{
 	display: block;
+	text-decoration: none;
 }
 #navigation li:hover {
 	background-color: #88BFB2;
 }
 #content  {
 	font-family: Tahoma, Geneva, sans-serif;
-    width: 70%;
+    width: 60%;
 	float: left;
 	border-style: solid;
-	border-corner-shape: curve;
 	border-radius: 10px;
 	border-top-width: 2px;
 	border-left-width: 2px;
@@ -50,10 +53,10 @@ a:visited {
 form {
 	font-size: 16px;
 	float: right;
-	width: 20%px;
-	height: 200px;
+	width: 20%;
+	min-width: 200px;
+	height: 230px;
 	border-style: solid;
-	border-corner-shape: curve;
 	border-radius: 10px;
 	border-top-width: 2px;
 	border-left-width: 2px;
@@ -68,3 +71,4 @@ body {
 	background-color: #DCFFF7;
 	overflow: auto;
 }
+</style>
