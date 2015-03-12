@@ -19,25 +19,7 @@ class Site extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('index.html');
-	}
-	public function statistika ($page='Statistika.html')
-	{
-		$this->load->view($page);
-	}
-	public function haaletamine ($page='Hääletamine.html')
-	{
-		$this->load->view($page);
-	}
-	public function nimekiri ($page='Nimekiri.html')
-	{
-		$this->load->view($page);
-	}
-	public function tulemused ($page='TulemusedReaalajas.html')
-	{
-		$this->load->view($page);
+		$this->load->view('body');
 	}
 }
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
+?>
