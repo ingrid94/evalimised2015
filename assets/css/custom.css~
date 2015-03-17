@@ -1,4 +1,18 @@
 body{
-padding-left: 100px;
-padding-right: 100px;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+.validaatorid{
+	position: fixed;
+    bottom: 30px;
+    right: 5px;
+}
+
+.otsingukast{
+	display: inline-block;
+}
+
+.content{
+	display: inline-block;
 }

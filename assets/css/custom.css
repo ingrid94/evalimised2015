@@ -1,10 +1,20 @@
 body{
-padding-left: 5%;
-padding-right: 5%;
+	padding-left: 5%;
+	padding-right: 5%;
 }
+<<<<<<< HEAD
 #otsing {
 	float: right;
 	width: 20%;
 	min-width: 210px;
 	height: 230px;
 }
+=======
+
+.validaatorid{
+	position: fixed;
+    bottom: 30px;
+    right: 5px;
+}
+
+>>>>>>> 67944a2c5a23fd1a79b296f62fe7e01e2cbbe79a
