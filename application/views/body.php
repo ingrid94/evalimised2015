@@ -35,8 +35,8 @@
 		<div class="btn-group pull-right" role="group" aria-label="...">
 			<button type="button" class="btn btn-default">Logi sisse</button>
 		</div>
-
-		<div id="esileht">
+<div class="contentSearch">
+		<div class="content">
 			<h1>E-valimised 2015</h1>
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
 
@@ -49,32 +49,34 @@
 <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
 		</div>
 
-		<div class="panel panel-default">
- 			<div class="panel-heading">Otsing</div>
-  				<div class="panel-body">
-					<div class="otsing">
-						<div class="btn-group">
-  							<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-							Erakonna järgi <span class="caret"></span>
-  							</button>
- 							<ul class="dropdown-menu" role="menu">
-								<li>Erakond1</li>
-								<li>Erakond2</li>
-  							</ul>
-						</div>
-						<div class="btn-group">
-  							<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-							Piirkonna järgi <span class="caret"></span>
-  							</button>
-  							<ul class="dropdown-menu" role="menu">
-								<li>Piirkond1</li>
-								<li>Piirkond2</li>
-  							</ul>
-						</div>
-						<div class="nimeotsing">
-							<div class="input-group">
-								<span class="input-group-addon" id="sizing-addon3">Nime järgi</span>
-  								<input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon3">
+			<div class="panel panel-default">
+ 				<div class="panel-heading">Otsing</div>
+  					<div class="panel-body">
+						<div class="otsing">
+							<div class="btn-group">
+  								<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+								Erakonna järgi <span class="caret"></span>
+  								</button>
+ 								<ul class="dropdown-menu" role="menu">
+									<li>Erakond1</li>
+									<li>Erakond2</li>
+  								</ul>
+							</div>
+							<div class="btn-group">
+  								<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+								Piirkonna järgi <span class="caret"></span>
+  								</button>
+  								<ul class="dropdown-menu" role="menu">
+									<li>Piirkond1</li>
+									<li>Piirkond2</li>
+  								</ul>
+							</div>
+							<div class="nimeotsing">
+								<div class="input-group">
+									<span class="input-group-addon" id="sizing-addon3">Nime järgi</span>
+  									<input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon3">
+							</div>
+							<button type="submit" class="btn btn-default">Otsi!</button>
 						</div>
 					</div>
 				</div>
