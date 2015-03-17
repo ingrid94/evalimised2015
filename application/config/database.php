@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'https://www7.cs.ut.ee/phpmyadmin';
+$db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'ev2015';
 $db['default']['password'] = 'kaughaldus';
 $db['default']['database'] = 'ev2015';

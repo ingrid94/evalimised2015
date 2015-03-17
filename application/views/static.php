@@ -36,7 +36,7 @@
 			<a href="http://ev2015.cs.ut.ee/index.php/site/haaletamine" class="btn btn-default" role="button">Hääletamine</a>
 		</div>
 		<div class="btn-group pull-right" role="group" aria-label="...">
-			<button type="button" class="btn btn-default">Logi sisse</button>
+			<a href="http://ev2015.cs.ut.ee/index.php/site/login" class="btn btn-default" role="button">Logi sisse</a>
 		</div>
 		<div class="panel panel-default" id="otsing">
  			<div class="panel-heading">Otsing</div>
