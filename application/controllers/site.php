@@ -19,7 +19,33 @@ class Site extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('body');
+		$this->load->view('static');
+		$this->load->view('index');
+		$this->load->view('footer');
+	}
+	public function nimekiri()
+	{
+		$this->load->view('static');
+		$this->load->view('nimekiri');
+		$this->load->view('footer');
+	}
+	public function tulemused()
+	{
+		$this->load->view('static');
+		$this->load->view('tulemused');
+		$this->load->view('footer');
+	}
+	public function statistika()
+	{
+		$this->load->view('static');
+		$this->load->view('statistika');
+		$this->load->view('footer');
+	}
+	public function haaletamine()
+	{
+		$this->load->view('static');
+		$this->load->view('hääletamine');
+		$this->load->view('footer');
 	}
 }
 ?>

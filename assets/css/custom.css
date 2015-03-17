@@ -2,3 +2,9 @@ body{
 padding-left: 5%;
 padding-right: 5%;
 }
+#otsing {
+	float: right;
+	width: 20%;
+	min-width: 210px;
+	height: 230px;
+}
