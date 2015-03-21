@@ -38,34 +38,32 @@
 		<div class="btn-group pull-right" role="group" aria-label="...">
 			<a href="http://ev2015.cs.ut.ee/index.php/site/login" class="btn btn-default" role="button">Logi sisse</a>
 		</div>
-		<div class="panel panel-default" id="otsing">
+		<form action="<?php echo site_url('search/search_keyword');?>" method = "post"> 
+			<div class="panel panel-default" id="otsing">
  			<div class="panel-heading">Otsing</div>
-  				<div class="panel-body">
-					<div class="otsing">
-						<div class="btn-group">
-  							<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-							Erakonna järgi <span class="caret"></span>
-  							</button>
- 							<ul class="dropdown-menu" role="menu">
-								<li>Erakond1</li>
-								<li>Erakond2</li>
-  							</ul>
-						</div>
-						<div class="btn-group">
-  							<button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-							Piirkonna järgi <span class="caret"></span>
-  							</button>
-  							<ul class="dropdown-menu" role="menu">
-								<li>Piirkond1</li>
-								<li>Piirkond2</li>
-  							</ul>
-						</div>
-						<div class="nimeotsing">
-							<div class="input-group">
-								<span class="input-group-addon" id="sizing-addon3">Nime järgi</span>
-  								<input type="text" class="form-control" placeholder="" aria-describedby="sizing-addon3">
-						</div>
-					</div>
+				<div class="form-group">
+					<label for="Piirkond" class="col-sm-2 control-label">Piirkond</label>
+					<select class="form-control" id="Piirkond">
+						<option selected="selected">...</option>
+						<option value="a1">Piirkond1</option>
+						<option value="a2">Piirkond2</option>
+						<option value="a3">Piirkond3</option>
+						<option value="a4">Piirkond4</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="Erakond" class="col-sm-2 control-label">Erakond</label> 
+					<select class="form-control" id="Erakond">
+						<option selected="selected">...</option>
+						<option value="e1">Erakond1</option>
+						<option value="e2">Erakond2</option>
+						<option value="e3">Erakond3</option>
+						<option value="e4">Erakond4</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" name="Kandidaat" placeholder="Kandidaadi nime järgi:">
+					<input type="submit" name="submit" value ="Otsi" class="btn btn-default">
 				</div>
 			</div>
-		</div>
+			</form>
