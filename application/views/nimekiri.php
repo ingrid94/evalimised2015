@@ -1,13 +1,5 @@
 <div id="nimekiri">
 <h1>Nimekiri!</h1>
-	<?php
-		$query = $this->db->query('SELECT `Candidate`.`Id`, `Fraction`.`Name`,`Users`.`LastName`, `Users`.`Forename`, `Candidate`.`Description`
-		FROM `Users`
-		 LEFT JOIN `ev2015`.`Candidate` ON `Users`.`Id` = `Candidate`.`U_Id`
-		 LEFT JOIN `ev2015`.`Fraction` ON `Candidate`.`Fr_Id`= `Fraction`.`Id`
-		ORDER BY `Candidate`.`Id` ASC');
-	?>
-
 <table class="table">
 			<thead>
       			<tr>
@@ -19,22 +11,15 @@
       			</tr>
     		</thead>
 			<tbody>
-     			<tr>
-					<td>
-						olen lahe.
-					</td>
-					<td>
-						olen lahe.
-					</td>
-					<td>
-						olen lahe.
-					</td>
-					<td>
-						olen lahe.
-					</td>
-					<td>
-						olen lahe.
-					</td>
-				</tr>
-  		</table>
+			<?php foreach($query as $row){?>
+    			<tr>
+         			<td><?php echo $row->CandId;?></td>
+         			<td><?php echo $row->FraNa;?></td>
+         			<td><?php echo $row->LName;?></td>
+         			<td><?php echo $row->FName;?></td>
+         			<td><?php echo $row->Descript;?></td>
+      			</tr>     
+     		<?php }?>
+			</tbody>
+</table>
 </div>

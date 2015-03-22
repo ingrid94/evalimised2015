@@ -23,10 +23,18 @@ class Site extends CI_Controller {
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
+
+	public function __Construct(){
+		parent::__Construct ();
+		$this->load->database(); 
+		$this->load->model('model_posts');
+ }
+ 
 	public function nimekiri()
-	{
+	{	
+		$data['query'] = $this->model_posts->getPosts();
 		$this->load->view('static');
-		$this->load->view('nimekiri');
+		$this->load->view('nimekiri', $data);
 		$this->load->view('footer');
 	}
 	public function tulemused()
