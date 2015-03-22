@@ -1,30 +1,40 @@
-<?php
-$query = $this->db->query('SELECT `Candidate`.`Id`, `Fraction`.`Name`,`Users`.`LastName`, `Users`.`Forename`, `Candidate`.`Description`
-FROM `Users`
- LEFT JOIN `ev2015`.`Candidate` ON `Users`.`Id` = `Candidate`.`U_Id`
- LEFT JOIN `ev2015`.`Fraction` ON `Candidate`.`Fr_Id`= `Fraction`.`Id`
-ORDER BY `Candidate`.`Id` ASC');
+<div id="nimekiri">
+<h1>Nimekiri!</h1>
+	<?php
+		$query = $this->db->query('SELECT `Candidate`.`Id`, `Fraction`.`Name`,`Users`.`LastName`, `Users`.`Forename`, `Candidate`.`Description`
+		FROM `Users`
+		 LEFT JOIN `ev2015`.`Candidate` ON `Users`.`Id` = `Candidate`.`U_Id`
+		 LEFT JOIN `ev2015`.`Fraction` ON `Candidate`.`Fr_Id`= `Fraction`.`Id`
+		ORDER BY `Candidate`.`Id` ASC');
+	?>
 
-foreach ($query->result_array() as $row)
-{
-    echo $row['Kandidaadi number'];
-    echo $row['Partei nimi'];
-    echo $row['Kandidaadi perenimi'];
-	echo $row['Kandidaadi eesnimi'];
-	echo $row['Kandidaadi kirjeldus'];
-}
-?>
-
-
-		<div id="nimekiri">
-			<h1>Nimekiri</h1>
-			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-
-<p>Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
-
-<p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-
-<p>Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.</p>
-
-<p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
-		</div>
+<table class="table">
+			<thead>
+      			<tr>
+        			<th>Kandidaadi number</th>
+        			<th>Partei nimi</th>
+        			<th>Kandidaadi perenimi</th>
+					<th>Kandidaadi eesnimi</th>
+					<th>Kandidaadi kirjeldus</th>
+      			</tr>
+    		</thead>
+			<tbody>
+     			<tr>
+					<td>
+						olen lahe.
+					</td>
+					<td>
+						olen lahe.
+					</td>
+					<td>
+						olen lahe.
+					</td>
+					<td>
+						olen lahe.
+					</td>
+					<td>
+						olen lahe.
+					</td>
+				</tr>
+  		</table>
+</div>
