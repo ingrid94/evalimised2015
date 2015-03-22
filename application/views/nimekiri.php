@@ -1,3 +1,21 @@
+<?php
+$query = $this->db->query('SELECT `Candidate`.`Id`, `Fraction`.`Name`,`Users`.`LastName`, `Users`.`Forename`, `Candidate`.`Description`
+FROM `Users`
+ LEFT JOIN `ev2015`.`Candidate` ON `Users`.`Id` = `Candidate`.`U_Id`
+ LEFT JOIN `ev2015`.`Fraction` ON `Candidate`.`Fr_Id`= `Fraction`.`Id`
+ORDER BY `Candidate`.`Id` ASC');
+
+foreach ($query->result_array() as $row)
+{
+    echo $row['Kandidaadi number'];
+    echo $row['Partei nimi'];
+    echo $row['Kandidaadi perenimi'];
+	echo $row['Kandidaadi eesnimi'];
+	echo $row['Kandidaadi kirjeldus'];
+}
+?>
+
+
 		<div id="nimekiri">
 			<h1>Nimekiri</h1>
 			<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>

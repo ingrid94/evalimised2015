@@ -37,7 +37,7 @@
 |
 */
 
-$autoload['packages'] = array('package, session');
+$autoload['packages'] = array('package', 'session');
 
 
 /*
