@@ -1,4 +1,4 @@
-<div id="nimekiri">
+<div id="nimekiri" class="sisu">
 <h1>Nimekiri!</h1>
 <table class="table">
 			<thead>

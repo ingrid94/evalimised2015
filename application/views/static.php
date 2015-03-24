@@ -38,6 +38,9 @@
 		<div class="btn-group pull-right" role="group" aria-label="...">
 			<a href="http://ev2015.cs.ut.ee/index.php/site/login" class="btn btn-default" role="button">Logi sisse</a>
 		</div>
+		<div class="btn-group pull-right" role="group" aria-label="...">
+			<a href="http://ev2015.cs.ut.ee/index.php/site/registreeri" class="btn btn-default" role="button">Registreeri</a>
+		</div>
 		<form action="<?php echo site_url('search/search_keyword');?>" method = "post"> 
 			<div class="panel panel-default" id="otsing">
  			<div class="panel-heading">Otsing</div>

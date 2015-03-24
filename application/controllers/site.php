@@ -57,7 +57,15 @@ class Site extends CI_Controller {
 	}
 	
 	public function login(){
+		$this->load->view('static');
 		$this->load->view('login');
+		$this->load->view('footer');
+	}
+	
+	public function registreeri(){
+		$this->load->view('static');
+		$this->load->view('registreeri');
+		$this->load->view('footer');
 	}
 	
 	public function members(){

@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Login page!</title>
-
-</head>
-<body>
-
-<div id="container">
+<div id="login" class="sisu">
 	<h1>Login</h1>
 	
 	<?php
@@ -33,6 +24,3 @@
 	?>
 
 </div>
-
-</body>
-</html>
