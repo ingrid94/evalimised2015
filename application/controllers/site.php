@@ -23,15 +23,10 @@ class Site extends CI_Controller {
 		$this->load->view('index');
 		$this->load->view('footer');
 	}
-
-	public function __Construct(){
-		parent::__Construct ();
-		$this->load->database(); 
-		$this->load->model('model_posts');
- }
  
 	public function nimekiri()
 	{	
+		$this->load->model('model_posts');
 		$data['query'] = $this->model_posts->getPosts();
 		$this->load->view('static');
 		$this->load->view('nimekiri', $data);
@@ -45,8 +40,10 @@ class Site extends CI_Controller {
 	}
 	public function statistika()
 	{
+		$this->load->model('model_votes_fraction');
+		$data['query'] = $this->model_votes_fraction->getVotesForFraction();
 		$this->load->view('static');
-		$this->load->view('statistika');
+		$this->load->view('statistika', $data);
 		$this->load->view('footer');
 	}
 	public function haaletamine()
