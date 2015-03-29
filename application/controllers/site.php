@@ -46,6 +46,12 @@ class Site extends CI_Controller {
 		$this->load->view('statistika', $data);
 		$this->load->view('footer');
 	}
+	public function test()
+	{
+		$this->load->view('static');
+		$this->load->view('test');
+		$this->load->view('footer');
+	}
 	public function haaletamine()
 	{
 		$this->load->view('static');

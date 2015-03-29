@@ -12,6 +12,15 @@
 		<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
 		<!--Custom JavaScript - enda kirjutatud javascript-->
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+		<!--JQuery-->
+		<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script>
+		<!--JQuery tablesorter plugin-->
+		<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>
+		<script>
+		$(function() {		
+			$('#test').tablesorter({ sortList:[[0,0],[1,0]] });
+		});
+		</script>
 		
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
