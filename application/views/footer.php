@@ -6,8 +6,4 @@
 			<img src="http://www.rantech.co.za/ranBlog/wp-content/uploads/2012/08/CSS3_logo.png" width="63" height="64" alt="CSS3 Powered" title="CSS3 Powered">
 			</a>
 		</div>
-    	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    	<!-- Include all compiled plugins (below), or include individual files as needed -->
-    	<script src="assets/js/bootstrap.min.js"></script>
 	</body>

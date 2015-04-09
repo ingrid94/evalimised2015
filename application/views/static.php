@@ -17,8 +17,13 @@
 		<!--JQuery tablesorter plugin-->
 		<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>
 		<script>
-		$(function() {		
-			$('#test').tablesorter({ sortList:[[0,0],[1,0]] });
+		$(document).ready(function() {		
+			$('#test').tablesorter();
+		});
+		</script>
+		<script>
+		$(document).ready(function() {		
+			$('#nimekiri_tabel').tablesorter();
 		});
 		</script>
 		
