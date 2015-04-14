@@ -2,7 +2,7 @@
 class model_votes_fraction extends CI_Model {
 
 	public function getVotesForFraction(){
-		$sql = "SELECT * FROM `Votes for Fraction`";
+		$sql = "select `Fraction`.`Name` AS `Partei`,count(`Fraction`.`Name`) AS `Hääli` from ((`Fraction` join `Candidate` on((`Fraction`.`Id` = `Candidate`.`Fr_Id`))) join `Users` on((`Candidate`.`Id` = `Users`.`Vote`))) group by `Fraction`.`Name` order by count(`Fraction`.`Name`) desc";
 		$query = $this->db->query($sql);
 		return $query->result();
 	}

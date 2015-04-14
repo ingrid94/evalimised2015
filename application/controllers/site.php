@@ -34,8 +34,10 @@ class Site extends CI_Controller {
 	}
 	public function tulemused()
 	{
+		$this->load->model('model_votes_fraction');
+		$data['query'] = $this->model_votes_fraction->getVotesForFraction();
 		$this->load->view('static');
-		$this->load->view('tulemused');
+		$this->load->view('tulemused', $data);
 		$this->load->view('footer');
 	}
 	public function statistika()
