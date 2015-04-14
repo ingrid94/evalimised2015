@@ -1,6 +1,5 @@
-<div id="tulemused" class="sisu">
-	<h1>Tulemused reaalajas</h1>
-	<h2>Riigi lõikes: </h2>
+<div id="tulemused2" class="sisu">
+	<h2>Erakonna lõikes: </h2>
 	<table id="table" class="tablesorter">
 		<thead>
       		<tr>
