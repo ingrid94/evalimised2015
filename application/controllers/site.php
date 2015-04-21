@@ -56,17 +56,27 @@ class Site extends CI_Controller {
 	}
 	public function test()
 	{
-		$this->load->view('static');
-		$this->load->view('test');
-		$this->load->view('footer');
+		if($this->session->userdata('is_logged_in') == true) {
+			$this->load->view('static');
+			$this->load->view('test');
+			$this->load->view('footer');
+		} else {
+			redirect('site/login');
+		}
+		
 	}
 	public function haaletamine()
 	{
-		$this->load->view('static');
-		$this->load->view('hääletamine');
-		$this->load->view('footer');
+		if($this->session->userdata('is_logged_in') == true) {
+			$this->load->view('static');
+			$this->load->view('hääletamine');
+			$this->load->view('footer');
+		} else {
+			$this->load->view('static');
+			$this->load->view('hääletamine_audentimata');
+			$this->load->view('footer');
+		}
 	}
-	
 	public function login(){
 		$this->load->view('static');
 		$this->load->view('login');
@@ -93,11 +103,26 @@ class Site extends CI_Controller {
 		$this->form_validation->set_rules('Password', 'Password', 'required|md5|trim');
 		
 		if ($this->form_validation->run()){
-			redirect('site/members');
+			redirect('site/haaletamine');
 		} else {
 			$this->load->view('login');
 		}
 
+	}
+	
+	public function signup_validation(){
+		
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('Username', 'Username', 'required|trim|is_unique[Authentication.Username]');
+		$this->form_validation->set_rules('Password', 'Password', 'required|trim');
+		$this->form_validation->set_rules('cPassword', 'Confirm Password', 'required|trim|matches[Password]');
+	
+		if ($this->form_validation->run()){
+			echo "Pass";
+		} else {
+			echo "You shall not pass!";
+			redirect('site/registreeri');
+		}
 	}
 	
 	public function validate_credentials() {
@@ -117,6 +142,8 @@ class Site extends CI_Controller {
 	}
 	public function logout(){
 		session_destroy();
+		$this->session->unset_userdata('username');
+		$this->session->unset_userdata('is_logged_in');
 		redirect('site/login');
 	}
 }
