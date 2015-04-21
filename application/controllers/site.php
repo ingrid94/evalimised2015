@@ -1,6 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Site extends CI_Controller {
+	public function __construct() {
+		parent::__construct();
+		session_start();
+	}
 
 	/**
 	 * Index Page for this controller.
@@ -98,13 +102,22 @@ class Site extends CI_Controller {
 	
 	public function validate_credentials() {
 		$this->load->model('model_users');
-		
-		if ($this->model_users->can_log_in()) {
+		$query = $this->model_users->can_log_in();
+		if ($query) {
+			$data = array(
+				'username' => $this->input->post('Username'),
+				'is_logged_in' => true
+			);
+			$this->session->set_userdata($data);
 			return true;
 		} else {
 			$this->form_validation->set_message('validate_credentials', 'Incorrect username/password.');
 			return false;
 		}
+	}
+	public function logout(){
+		session_destroy();
+		redirect('site/login');
 	}
 }
 ?>
