@@ -1,16 +1,16 @@
 <div id="tulemused2" class="sisu">
-	<h2>Erakonna lõikes: </h2>
-	<table id="table" class="tablesorter">
+	<h2>TOP 10 kandidaadid: </h2>
+	<table id="table2" class="tablesorter">
 		<thead>
       		<tr>
-        		<th>Erakonna nimi</th>
+        		<th>Kandidaadi nimi</th>
         		<th>Häälte arv</th>
       		</tr>
     	</thead>
 		<tbody>
-			<?php foreach($query as $row){?>
+			<?php foreach($query2 as $row){?>
     			<tr>
-         			<td><?php echo $row->Partei;?></td>
+         			<td><?php echo $row->Kandidaat;?></td>
          			<td><?php echo $row->Hääli;?></td>
       			</tr>
      		<?php }?>

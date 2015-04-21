@@ -2,17 +2,15 @@
 class model_results extends CI_Model {
 
 	public function getVotesForFraction(){
-		$sql = "select `Fraction`.`Name` AS `Partei`,count(`Fraction`.`Name`) AS `Hääli` from ((`Fraction` join `Candidate` on((`Fraction`.`Id` = `Candidate`.`Fr_Id`))) join `Users` on((`Candidate`.`Id` = `Users`.`Vote`))) group by `Fraction`.`Name` order by count(`Fraction`.`Name`) desc";
+		$sql = "SELECT `Fraction`.`Name` AS `Partei`, COUNT(`Fraction`.`Name`) AS `Hääli` FROM `Fraction` JOIN `Candidate` ON `Candidate`.`Id` = `Fraction`.`Id` JOIN `Vote` ON `Candidate_Id` = `Candidate`.`Id` GROUP BY `Fraction`.`Name` order by `Hääli` DESC";
 		$query = $this->db->query($sql);
 		return $query->result();
 	}
 	
-	//TODO: päring on vale
 	public function getVotesForCandidate(){
-		$sql = "select `Fraction`.`Name` AS `Partei`,count(`Fraction`.`Name`) AS `Hääli` from ((`Fraction` join `Candidate` on((`Fraction`.`Id` = `Candidate`.`Fr_Id`))) join `Users` on((`Candidate`.`Id` = `Users`.`Vote`))) group by `Fraction`.`Name` order by count(`Fraction`.`Name`) desc";
+		$sql = "SELECT CONCAT(`Users`.`ForeName`, ' ', `Users`.`LastName`) AS `Kandidaat`, COUNT(`Users`.`Id`) AS `Hääli` FROM `Users` JOIN `Candidate` ON `Users`.`Id` = `Candidate`.`U_Id` JOIN `Vote` ON `Candidate_Id` = `Candidate`.`Id` GROUP BY `Users`.`Id` order by `Hääli` DESC LIMIT 10";
 		$query = $this->db->query($sql);
 		return $query->result();
 	}
-		
 }
 ?>

@@ -44,7 +44,7 @@ class Site extends CI_Controller {
 	}
 	public function statistika()
 	{
-		$this->load->model('model_votes_fraction');
+		$this->load->model('model_results');
 		$data['query'] = $this->model_results->getVotesForFraction();
 		$this->load->view('static');
 		$this->load->view('statistika', $data);
