@@ -111,16 +111,25 @@ class Site extends CI_Controller {
 	}
 	
 	public function signup_validation(){
-		
+		$this->load->model('model_users');
 		$this->load->library('form_validation');
 		$this->form_validation->set_rules('Username', 'Username', 'required|trim|is_unique[Authentication.Username]');
 		$this->form_validation->set_rules('Password', 'Password', 'required|trim');
 		$this->form_validation->set_rules('cPassword', 'Confirm Password', 'required|trim|matches[Password]');
 	
+		$this->form_validation->set_message('is_unique', "See kasutaja on juba olemas!");
+	
 		if ($this->form_validation->run()){
-			echo "Pass";
+			redirect('site/login');
+			$data = array(
+				'Username' => $this->input->post('Username'),
+				'Password' => md5($this->input->post('Password'))
+				);
+			$add_user = $this->db->insert('Authentication', $data);
+			if($add_user) {
+				return true;
+			} return false;
 		} else {
-			echo "You shall not pass!";
 			redirect('site/registreeri');
 		}
 	}

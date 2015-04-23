@@ -4,8 +4,10 @@
 	
 	echo form_open('site/signup_validation');
 	
+	echo validation_errors();
+	
 	echo "<p>Kasutaja: ";
-	echo form_input('Username');
+	echo form_input('Username', $this->input->post('Username'));
 	echo "<p>";
 	
 	echo "<p>Parool: ";
