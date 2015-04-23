@@ -18,11 +18,6 @@
 		<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>
 		<script>
 		$(document).ready(function() {		
-			$('#test').tablesorter();
-		});
-		</script>
-		<script>
-		$(document).ready(function() {		
 			$('#nimekiri_tabel').tablesorter();
 		});
 		</script>
