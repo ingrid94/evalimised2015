@@ -17,15 +17,35 @@
 		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">
   
 		<!-- jQuery -->
-		<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   
 		<!-- DataTables -->
-		<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
+		<script type="text/javascript" charset="utf-8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
 
 		<script>
-		$(document).ready( function () {
-    	$('#nimekiri_tabel').DataTable();
-		} ); </script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#nimekiri_tabel tfoot th').each( function () {
+        var title = $('#nimekiri_tabel thead th').eq( $(this).index() ).text();
+        $(this).html( '<input type="text" placeholder="'+title+'">' );
+    } );
+ 
+    // DataTable
+    var table = $('#nimekiri_tabel').DataTable();
+ 
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+ 
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            that
+                .search( this.value )
+                .draw();
+        } );
+    } );
+} );
+		</script>
+      
 
 		<!--JQuery-->
 		<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script> -->
@@ -75,7 +95,7 @@
 			</div>
 		<?php } ?>
 
-		<form action="static.php?go"  id="searchform" method = "post"> 
+		<!-- <form action="static.php?go"  id="searchform" method = "post"> 
 			<div class="panel panel-default" id="otsing">
  			<div class="panel-heading">Otsing</div>
 				<div class="form-group">
@@ -103,4 +123,4 @@
 					<input type="submit" name="submit" value ="Otsi" class="btn btn-default">
 				</div>
 			</div>
-			</form>
+			</form>-->

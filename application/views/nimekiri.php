@@ -1,6 +1,7 @@
 <div id="nimekiri" class="sisu">
 <h1>Nimekiri!</h1>
-<table id="nimekiri_tabel" class="display">
+<table id="nimekiri_tabel" class="display" cellspacing="0" width="100%">
+
 			<thead>
       			<tr>
         			<th>Kandidaadi number</th>
@@ -10,6 +11,16 @@
 					<th>Kandidaadi kirjeldus</th>
       			</tr>
     		</thead>
+
+			<tfoot>
+      			<tr>
+        			<th>Kandidaadi number</th>
+        			<th>Partei nimi</th>
+        			<th>Kandidaadi perenimi</th>
+					<th>Kandidaadi eesnimi</th>
+					<th>Kandidaadi kirjeldus</th>
+      			</tr>
+    		</tfoot>
 			<tbody>
 			<?php foreach($query as $row){?>
     			<tr>
