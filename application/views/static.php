@@ -91,7 +91,7 @@ $(document).ready(function() {
 				<a href="http://ev2015.cs.ut.ee/index.php/site/logout" class="btn btn-default" role="button">Logi välja</a>
 			</div>
 			<div class="btn-group pull-right" role="group" aria-label="...">
-				<a href="http://ev2015.cs.ut.ee/index.php/site/isikuandmed" class="btn btn-default" role="button">isikuandmed</a>
+				<a href="http://ev2015.cs.ut.ee/index.php/site/isikuandmed" class="btn btn-default" role="button">Isikuandmed</a>
 			</div>
 		<?php } ?>
 
