@@ -1,0 +1,20 @@
+CACHE MANIFEST
+# 2015-04-23 v1.0.0
+/index.php/site/nimekiri
+/index.php/site/tulemused
+/index.php/site/statistika
+
+/assets/css/asc.gif
+/assets/css/bg.gif
+/assets/css/desc.gif
+/assets/css/attc.css
+/assets/css/bootstrap.min.css
+/assets/css/bootstrap-theme.min.css
+/assets/css/custom.css
+
+/assets/js/bootstrap.min.js
+/assets/js/custom.js
+/assets/js/jquery.tablesorter.js
+/assets/js/jquery-1.11.2.js
+/assets/js/npm.js
+
