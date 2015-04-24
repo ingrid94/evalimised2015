@@ -88,6 +88,11 @@ class Site extends CI_Controller {
 		$this->load->view('registreeri');
 		$this->load->view('footer');
 	}
+	public function isikuandmed(){
+		$this->load->view('static');
+		$this->load->view('isikuandmed');
+		$this->load->view('footer');
+	}
 	
 	public function members(){
 		$this->load->view('static');
@@ -120,15 +125,20 @@ class Site extends CI_Controller {
 		$this->form_validation->set_message('is_unique', "See kasutaja on juba olemas!");
 	
 		if ($this->form_validation->run()){
-			redirect('site/login');
 			$data = array(
 				'Username' => $this->input->post('Username'),
 				'Password' => md5($this->input->post('Password'))
 				);
 			$add_user = $this->db->insert('Authentication', $data);
 			if($add_user) {
+				//user adding to auhentication was a success
+				redirect('site/haaletamine');
 				return true;
-			} return false;
+			} else {
+				echo "something went wrong with adding data:S";
+				redirect('site/registreeri');
+				return false;
+			}
 		} else {
 			redirect('site/registreeri');
 		}
