@@ -12,15 +12,30 @@
 		<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
 		<!--Custom JavaScript - enda kirjutatud javascript-->
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+
+		<!-- DataTables CSS -->
+		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">
+  
+		<!-- jQuery -->
+		<script type="text/javascript" charset="utf8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  
+		<!-- DataTables -->
+		<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
+
+		<script>
+		$(document).ready( function () {
+    	$('#nimekiri_tabel').DataTable();
+		} ); </script>
+
 		<!--JQuery-->
-		<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script>
+		<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script> -->
 		<!--JQuery tablesorter plugin-->
-		<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>
+		<!--<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>
 		<script>
 		$(document).ready(function() {		
 			$('#nimekiri_tabel').tablesorter();
 		});
-		</script>
+		</script> -->
 		
 
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -59,7 +74,8 @@
 				<a href="http://ev2015.cs.ut.ee/index.php/site/isikuandmed" class="btn btn-default" role="button">isikuandmed</a>
 			</div>
 		<?php } ?>
-		<form action="<?php echo site_url('search/search_keyword');?>" method = "post"> 
+
+		<form action="static.php?go"  id="searchform" method = "post"> 
 			<div class="panel panel-default" id="otsing">
  			<div class="panel-heading">Otsing</div>
 				<div class="form-group">

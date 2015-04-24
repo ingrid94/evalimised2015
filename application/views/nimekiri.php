@@ -1,6 +1,6 @@
 <div id="nimekiri" class="sisu">
 <h1>Nimekiri!</h1>
-<table id="nimekiri_tabel" class="tablesorter">
+<table id="nimekiri_tabel" class="display">
 			<thead>
       			<tr>
         			<th>Kandidaadi number</th>

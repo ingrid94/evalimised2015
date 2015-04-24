@@ -99,7 +99,7 @@ class Site extends CI_Controller {
 		$this->load->view('hääletamine');
 		$this->load->view('footer');
 	}
-	
+
 	public function login_validation(){
 		
 		$this->load->library('form_validation');
