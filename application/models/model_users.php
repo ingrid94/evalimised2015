@@ -13,4 +13,10 @@ class Model_users extends CI_Model {
 			return false;
 		}
 	}
+	public function get_UserID($username) {
+		$this->db->where('Username', $username);
+		$query = $this->db->get('Authentication');
+		$data = $query->row()->A_Id;
+		return $data;
+	}
 }

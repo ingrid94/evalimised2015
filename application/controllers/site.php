@@ -56,12 +56,12 @@ class Site extends CI_Controller {
 	}
 	public function test()
 	{
-		if($this->session->userdata('is_logged_in') == true) {
+		if($this->session->userdata('userID') == '4') {
 			$this->load->view('static');
 			$this->load->view('test');
 			$this->load->view('footer');
 		} else {
-			redirect('site/login');
+			redirect('site/haaletamine');
 		}
 		
 	}
@@ -147,10 +147,13 @@ class Site extends CI_Controller {
 	public function validate_credentials() {
 		$this->load->model('model_users');
 		$query = $this->model_users->can_log_in();
+		$username = $this->input->post('Username');
+		$userID = $this->model_users->get_UserID($username);
 		if ($query) {
 			$data = array(
 				'username' => $this->input->post('Username'),
-				'is_logged_in' => true
+				'is_logged_in' => true,
+				'userID' => $userID
 			);
 			$this->session->set_userdata($data);
 			return true;
@@ -161,6 +164,7 @@ class Site extends CI_Controller {
 	}
 	public function logout(){
 		session_destroy();
+		$this->session->unset_userdata('userID');
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('is_logged_in');
 		redirect('site/login');
