@@ -19,4 +19,16 @@ class Model_users extends CI_Model {
 		$data = $query->row()->A_Id;
 		return $data;
 	}
+	public function del_user_settings($id){
+		$this->db->where('Id', $id);
+		$this->db->delete('Users');
+	}
+	public function show_user_settings(){
+		$sql = "SELECT `Users`.`Forename` AS `Eesnimi`";
+		$query = $this->db->query($sql);
+		return $query;
+		/*$this->db->where('Id', $id);
+		$query = $this->db->get('Users');
+		return $query->result();*/
+	}
 }

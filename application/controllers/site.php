@@ -89,8 +89,12 @@ class Site extends CI_Controller {
 		$this->load->view('footer');
 	}
 	public function isikuandmed(){
+		$this->load->model('model_users');
+		$userID = $this->session->userdata('userID');
+		$query = $this->model_users->show_user_settings();
+		$row = $query->row($userID);
 		$this->load->view('static');
-		$this->load->view('isikuandmed');
+		$this->load->view('isikuandmed', $row);
 		$this->load->view('footer');
 	}
 	
@@ -142,6 +146,31 @@ class Site extends CI_Controller {
 		} else {
 			redirect('site/registreeri');
 		}
+	}
+	
+	public function user_settings_validation(){
+		$this->load->model('model_users');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('Forename', 'Forename', 'required');
+		$this->form_validation->set_rules('LastName', 'LastName', 'required');
+		$this->form_validation->set_rules('Region', 'Region', 'required');
+		$this->form_validation->set_rules('Birthday', 'Birthday', 'required');
+		if($this->form_validation->run()){
+			$session_id = $this->session->userdata('userID');
+			$this->model_users->del_user_settings($session_id);
+			$data = array(
+				'Id' => $this->session->userdata('userID'),
+				'Forename' => $this->input->post('Forename'),
+				'LastName' => $this->input->post('LastName'),
+				'Region' => $this->input->post('Region'),
+				'Birthday' => $this->input->post('Birthday'),
+				);
+			$add_user_settings = $this->db->insert('Users', $data);
+			redirect('site/isikuandmed');
+		} else {
+			$this->load->view('isikuandmed');
+		}
+		
 	}
 	
 	public function validate_credentials() {
