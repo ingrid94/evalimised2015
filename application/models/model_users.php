@@ -24,7 +24,7 @@ class Model_users extends CI_Model {
 		$this->db->delete('Users');
 	}
 	public function show_user_settings(){
-		$sql = "SELECT `Users`.`Forename` AS `Eesnimi`";
+		$sql = "SELECT `Users`.`Forename` AS `Eesnimi`, `Users`.`Lastname` AS `Perenimi`, `Users`.`Region` AS `Piirkond`, `Users`.`Birthday` AS `Sünnipäev` FROM `Users` ORDER BY `Users`.`Id`DESC";
 		$query = $this->db->query($sql);
 		return $query;
 		/*$this->db->where('Id', $id);

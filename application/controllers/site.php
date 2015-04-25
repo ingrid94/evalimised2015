@@ -92,9 +92,9 @@ class Site extends CI_Controller {
 		$this->load->model('model_users');
 		$userID = $this->session->userdata('userID');
 		$query = $this->model_users->show_user_settings();
-		$row = $query->row($userID);
+		$data['row'] = $query->row($userID);
 		$this->load->view('static');
-		$this->load->view('isikuandmed', $row);
+		$this->load->view('isikuandmed', $data);
 		$this->load->view('footer');
 	}
 	
