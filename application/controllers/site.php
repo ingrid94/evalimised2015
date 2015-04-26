@@ -23,6 +23,10 @@ class Site extends CI_Controller {
 	 */
 	public function index()
 	{
+		$data = array(
+			'url' => 'site/index'
+		);
+		$this->session->set_userdata($data);
 		$this->load->view('static');
 		$this->load->view('index');
 		$this->load->view('footer');
@@ -30,6 +34,10 @@ class Site extends CI_Controller {
  
 	public function nimekiri()
 	{	
+		$data = array(
+			'url' => 'site/nimekiri'
+		);
+		$this->session->set_userdata($data);
 		$this->load->model('model_posts');
 		$data['query'] = $this->model_posts->getPosts();
 		$this->load->view('static');
@@ -38,6 +46,10 @@ class Site extends CI_Controller {
 	}
 	public function tulemused()
 	{
+		$dataurl = array(
+					'url' => 'site/tulemused'
+		);
+		$this->session->set_userdata($dataurl);
 		$this->load->model('model_results');
 		$data['query'] = $this->model_results->getVotesForFraction();
 		$data2['query2'] = $this->model_results->getVotesForCandidate();
@@ -48,6 +60,10 @@ class Site extends CI_Controller {
 	}
 	public function statistika()
 	{
+		$dataurl = array(
+			'url' => 'site/statistika'
+		);
+		$this->session->set_userdata($dataurl);
 		$this->load->model('model_results');
 		$data['query'] = $this->model_results->getVotesForFraction();
 		$this->load->view('static');
@@ -66,7 +82,11 @@ class Site extends CI_Controller {
 		
 	}
 	public function haaletamine()
-	{
+	{	
+		$dataurl = array(
+			'url' => 'site/haaletamine'
+		);
+		$this->session->set_userdata($dataurl);
 		if($this->session->userdata('is_logged_in') == true) {
 			$this->load->model('model_vote');
 			$userID = $this->session->userdata('userID');
@@ -116,7 +136,13 @@ class Site extends CI_Controller {
 		$this->form_validation->set_rules('Password', 'Password', 'required|md5|trim');
 		
 		if ($this->form_validation->run()){
-			redirect('site/haaletamine');
+			$redirectlink = $this->session->userdata('url');
+			if($redirectlink !== null){
+				redirect($redirectlink);
+			} else{
+				redirect('site/haaletamine');
+			}
+			
 		} else {
 			$this->load->view('login');
 		}
