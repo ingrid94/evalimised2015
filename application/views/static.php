@@ -6,21 +6,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>E-valimised2015</title>
 
-		<!-- Bootstrap - Selles failis on validatori jaoks mõned asjad välja kommenteeritud-->
+		<!--Bootstrap - Selles failis on validatori jaoks mõned asjad välja kommenteeritud-->
 		<link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
+		<!--DataTables CSS-->
+		<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.css" rel="stylesheet">
 		<!--Custom CSS - enda kirjutatud css-->
 		<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
 		<!--Custom JavaScript - enda kirjutatud javascript-->
 		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
-
-		<!-- DataTables CSS -->
-		<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.6/css/jquery.dataTables.css">
+		
+		<!--JQuery-->
+		<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script>
+		
+		
+		<!--JQuery tablesorter plugin-->
+		<!--<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>-->
   
-		<!-- jQuery -->
-		<script type="text/javascript" charset="utf-8" src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  
-		<!-- DataTables -->
-		<script type="text/javascript" charset="utf-8" src="//cdn.datatables.net/1.10.6/js/jquery.dataTables.js"></script>
+		<!--JQuery DataTables plugin-->
+		<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.js"></script>
 
 		<script>
 $(document).ready(function() {
@@ -45,19 +48,6 @@ $(document).ready(function() {
     } );
 } );
 		</script>
-      
-
-		<!--JQuery-->
-		<!-- <script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script> -->
-		<!--JQuery tablesorter plugin-->
-		<!--<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>
-		<script>
-		$(document).ready(function() {		
-			$('#nimekiri_tabel').tablesorter();
-		});
-		</script> -->
-		
-
 		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
