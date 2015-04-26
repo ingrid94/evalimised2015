@@ -96,7 +96,7 @@ class Site extends CI_Controller {
 		$this->load->model('model_users');
 		$userID = $this->session->userdata('userID');
 		$query = $this->model_users->show_user_settings();
-		$data['row'] = $query->row($userID);
+		$data['row'] = $query->row($userID-1);
 		$this->load->view('static');
 		$this->load->view('isikuandmed', $data);
 		$this->load->view('footer');
@@ -138,10 +138,26 @@ class Site extends CI_Controller {
 				'Password' => md5($this->input->post('Password'))
 				);
 			$add_user = $this->db->insert('Authentication', $data);
+			$username = $this->input->post('Username');
+			$id = $this->model_users->get_UserID($username);
+			$data2 = array(
+				'Id' => $id,
+				'Admin' => 0,
+				'LastName' => Vaikenimi,
+				'Forename' => Vaikenimi,
+				'Region' => Vaikenimi,
+				'Birthday' => '1990-01-01'
+				);
+			$add_usersID = $this->db->insert('Users', $data2);
 			if($add_user) {
 				//user adding to auhentication was a success
-				redirect('site/haaletamine');
-				return true;
+				if($add_usersID) {
+					redirect('site/login');
+					return true;
+				} else{
+					redirect('site/haaletamine');
+				return false;
+				}
 			} else {
 				echo "something went wrong with adding data:S";
 				redirect('site/registreeri');
