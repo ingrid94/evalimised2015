@@ -19,6 +19,12 @@ class Model_users extends CI_Model {
 		$data = $query->row()->A_Id;
 		return $data;
 	}
+	public function get_user_Region($userID) {
+		$this->db->where('Id', $userID);
+		$query = $this->db->get('Users');
+		$data = $query->row()->Region;
+		return $data;
+	}
 	public function del_user_settings($id){
 		$this->db->where('Id', $id);
 		$this->db->delete('Users');

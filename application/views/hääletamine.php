@@ -12,7 +12,7 @@
       	</tr>
    	</thead>
 	<tbody>
-		<?php foreach($query as $row){?>
+		<?php foreach($region as $row){?>
 			<tr>
 				<td><?php echo $row->CandId;?></td>
 				<td><?php echo $row->FraNa;?></td>

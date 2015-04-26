@@ -69,12 +69,9 @@ class Site extends CI_Controller {
 	{
 		if($this->session->userdata('is_logged_in') == true) {
 			$this->load->model('model_vote');
-			$this->load->model('model_users');
 			$userID = $this->session->userdata('userID');
-			$query = $this->model_users->show_user_settings();
-			$row = $query->row($userID);
-			$VoteRegion = $row->row[2];
-			$data['region'] = $this -> model_vote ->getCandidates($VoteRegion);
+			$VoteRegion = $this->session->userdata('userRegion');
+			$data['region'] = $this->model_vote->getCandidates($VoteRegion);
 			$this->load->view('static');
 			$this->load->view('hääletamine', $data);
 			$this->load->view('footer');
@@ -185,11 +182,13 @@ class Site extends CI_Controller {
 		$query = $this->model_users->can_log_in();
 		$username = $this->input->post('Username');
 		$userID = $this->model_users->get_UserID($username);
+		$userRegion = $this->model_users->get_User_Region($userID);
 		if ($query) {
 			$data = array(
 				'username' => $this->input->post('Username'),
 				'is_logged_in' => true,
-				'userID' => $userID
+				'userID' => $userID,
+				'userRegion' => $userRegion
 			);
 			$this->session->set_userdata($data);
 			return true;
