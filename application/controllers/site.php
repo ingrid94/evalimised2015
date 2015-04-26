@@ -68,8 +68,15 @@ class Site extends CI_Controller {
 	public function haaletamine()
 	{
 		if($this->session->userdata('is_logged_in') == true) {
+			$this->load->model('model_vote');
+			$this->load->model('model_users');
+			$userID = $this->session->userdata('userID');
+			$query = $this->model_users->show_user_settings();
+			$row = $query->row($userID);
+			$VoteRegion = $row->row[2];
+			$data['region'] = $this -> model_vote ->getCandidates($VoteRegion);
 			$this->load->view('static');
-			$this->load->view('hääletamine');
+			$this->load->view('hääletamine', $data);
 			$this->load->view('footer');
 		} else {
 			$this->load->view('static');

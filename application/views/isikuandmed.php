@@ -1,10 +1,10 @@
 <div id="isikuandmed" class="sisu">
 	<h1>Isikuandmed</h1>
 	<p>
-	Eesnimi: <?php echo $row->Forename;?><br>
-	Perenimi: <?php echo $row->LastName;?><br>
-	Piirkond: <?php echo $row->Region;?><br>
-	Sünnipäev: <?php echo $row->Birthday;?><br>
+	Eesnimi: <?php echo $row->Eesnimi;?><br>
+	Perenimi: <?php echo $row->Perenimi;?><br>
+	Piirkond: <?php echo $row->Piirkond;?><br>
+	Sünnipäev: <?php echo $row->Sünnipäev;?><br>
 
 	<p>
 	Muuda isikuandmed (kõik väljad on kohustuslikud).
