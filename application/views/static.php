@@ -28,13 +28,13 @@
 		<script>
 $(document).ready(function() {
     // Setup - add a text input to each footer cell
-    $('#nimekiri_tabel tfoot th').each( function () {
-        var title = $('#nimekiri_tabel thead th').eq( $(this).index() ).text();
+    $('table.display tfoot th').each( function () {
+        var title = $('table.display thead th').eq( $(this).index() ).text();
         $(this).html( '<input type="text" placeholder="'+title+'">' );
     } );
  
     // DataTable
-    var table = $('#nimekiri_tabel').DataTable();
+    var table = $('table.display').DataTable();
  
     // Apply the search
     table.columns().every( function () {

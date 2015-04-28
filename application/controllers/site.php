@@ -89,9 +89,8 @@ class Site extends CI_Controller {
 		$this->session->set_userdata($dataurl);
 		if($this->session->userdata('is_logged_in') == true) {
 			$this->load->model('model_vote');
-			$userID = $this->session->userdata('userID');
-			//$VoteRegion = $this->session->userdata('userRegion');
-			$data['region'] = $this->model_vote->getCandidates();
+			$VoteRegion = $this->session->userdata('userRegion');
+			$data['region'] = $this->model_vote->getCandidates($VoteRegion);
 			$this->load->view('static');
 			$this->load->view('hääletamine', $data);
 			$this->load->view('footer');
