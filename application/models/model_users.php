@@ -33,8 +33,9 @@ class Model_users extends CI_Model {
 		$sql = "SELECT `Users`.`Forename` AS `Eesnimi`, `Users`.`Lastname` AS `Perenimi`, `Users`.`Region` AS `Piirkond`, `Users`.`Birthday` AS `Sünnipäev` FROM `Users` ORDER BY `Users`.`Id`ASC";
 		$query = $this->db->query($sql);
 		return $query;
-		/*$this->db->where('Id', $id);
-		$query = $this->db->get('Users');
-		return $query->result();*/
+	}
+	public function del_candidate_settings($id) {
+		$this->db->where('U_Id', $id);
+		$this->db->delete('Candidate');
 	}
 }

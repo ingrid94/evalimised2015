@@ -120,12 +120,17 @@ class Site extends CI_Controller {
 		$this->load->view('isikuandmed', $data);
 		$this->load->view('footer');
 	}
-	
+	public function kandidaat(){
+		$this->load->view('static');
+		$this->load->view('kandidaat');
+		$this->load->view('footer');
+	}
 	public function members(){
 		$this->load->view('static');
 		$this->load->view('hääletamine');
 		$this->load->view('footer');
 	}
+	
 
 	public function login_validation(){
 		
@@ -147,7 +152,6 @@ class Site extends CI_Controller {
 		}
 
 	}
-	
 	public function signup_validation(){
 		$this->load->model('model_users');
 		$this->load->library('form_validation');
@@ -215,7 +219,34 @@ class Site extends CI_Controller {
 		} else {
 			$this->load->view('isikuandmed');
 		}
-		
+	}
+	public function user_candidate_validation(){
+		$this->load->model('model_users');
+		$this->load->library('form_validation');
+		$this->form_validation->set_rules('Fraction', 'Fraction', 'required');
+		$this->form_validation->set_rules('Description', 'Description', 'required');
+		$FractionInput = $this->input->post('Fraction');
+		if ($FractionInput == "Lahedad") {
+			$FractionID = 1;
+		} else if ($FractionInput == "Mõnusad") {
+			$FractionID = 2;
+		} else if ($FractionInput == "Koduvana") {
+			$FractionID = 3;
+		}
+		if($this->form_validation->run()){
+			$session_id = $this->session->userdata('userID');
+			$this->model_users->del_candidate_settings($session_id);
+			$data = array(
+				'U_Id' => $this->session->userdata('userID'),
+				'Fr_Id' => $FractionID,
+				'Region' => $this->session->userdata('userRegion'),
+				'Description' => $this->input->post('Description')
+				);
+			$add_user_candidate = $this->db->insert('Candidate', $data);
+			redirect('site/nimekiri');
+		} else {
+			$this->load->view('nimekiri');
+		}
 	}
 	
 	public function validate_credentials() {
@@ -243,6 +274,7 @@ class Site extends CI_Controller {
 		$this->session->unset_userdata('userID');
 		$this->session->unset_userdata('username');
 		$this->session->unset_userdata('is_logged_in');
+		$this->session->unset_userdata('userRegion');
 		redirect('site/login');
 	}
 }

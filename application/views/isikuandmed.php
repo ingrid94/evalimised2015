@@ -38,4 +38,5 @@
 	echo form_close();
 	
 	?>
+	<a href="http://ev2015.cs.ut.ee/index.php/site/kandidaat" class="btn btn-default" role="button">Lisa kandidaatiks</a>
 </div>
