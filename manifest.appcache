@@ -1,20 +1,30 @@
 CACHE MANIFEST
-# 2015-04-23 v1.0.0
-/index.php/site/nimekiri
-/index.php/site/tulemused
-/index.php/site/statistika
+# 2015-05-01 v1.0.0
 
-/assets/css/asc.gif
-/assets/css/bg.gif
-/assets/css/desc.gif
-/assets/css/attc.css
-/assets/css/bootstrap.min.css
-/assets/css/bootstrap-theme.min.css
+/index.php/site/nimekiri
+
+/assets/css/bootstrap.css
+/assets/css/bootstrap.css.map
+/assets/css/jquery.dataTables.css
 /assets/css/custom.css
 
-/assets/js/bootstrap.min.js
 /assets/js/custom.js
-/assets/js/jquery.tablesorter.js
 /assets/js/jquery-1.11.2.js
-/assets/js/npm.js
+/assets/js/jquery.dataTables.js
 
+/assets/images/sort_asc.png
+/assets/images/sort_desc.png
+/assets/images/sort_both.png
+/assets/images/CSS3_logo.png
+/favicon.ico
+
+http://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png
+
+NETWORK:
+/index.php/site/tulemused
+/index.php/site/haaletamine
+/index.php/site/statistika
+/index.php/site/login
+/index.php/site/logout
+/index.php/site/isikuandmed
+/index.php/site/registreeri

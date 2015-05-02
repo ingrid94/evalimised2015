@@ -85,32 +85,3 @@ $(document).ready(function() {
 			</div>
 		<?php } ?>
 
-		<!-- <form action="static.php?go"  id="searchform" method = "post"> 
-			<div class="panel panel-default" id="otsing">
- 			<div class="panel-heading">Otsing</div>
-				<div class="form-group">
-					<label for="Piirkond" class="col-sm-2 control-label">Piirkond</label>
-					<select class="form-control" id="Piirkond">
-						<option selected="selected">...</option>
-						<option value="a1">Piirkond1</option>
-						<option value="a2">Piirkond2</option>
-						<option value="a3">Piirkond3</option>
-						<option value="a4">Piirkond4</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<label for="Erakond" class="col-sm-2 control-label">Erakond</label> 
-					<select class="form-control" id="Erakond">
-						<option selected="selected">...</option>
-						<option value="e1">Erakond1</option>
-						<option value="e2">Erakond2</option>
-						<option value="e3">Erakond3</option>
-						<option value="e4">Erakond4</option>
-					</select>
-				</div>
-				<div class="form-group">
-					<input type="text" name="Kandidaat" placeholder="Kandidaadi nime järgi:">
-					<input type="submit" name="submit" value ="Otsi" class="btn btn-default">
-				</div>
-			</div>
-			</form>-->
