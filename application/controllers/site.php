@@ -40,9 +40,7 @@ class Site extends CI_Controller {
 		$this->session->set_userdata($data);
 		$this->load->model('model_posts');
 		$data['query'] = $this->model_posts->getPosts();
-		$this->load->view('static');
 		$this->load->view('nimekiri', $data);
-		$this->load->view('footer');
 	}
 	public function tulemused()
 	{

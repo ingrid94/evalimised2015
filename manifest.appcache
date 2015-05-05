@@ -1,7 +1,7 @@
 CACHE MANIFEST
 # 2015-05-01 v1.0.0
 
-/index.php/site/nimekiri
+/site/nimekiri
 
 /assets/css/bootstrap.css
 /assets/css/bootstrap.css.map
@@ -16,15 +16,14 @@ CACHE MANIFEST
 /assets/images/sort_desc.png
 /assets/images/sort_both.png
 /assets/images/CSS3logo.png
+/assets/images/HTML5_1Color_Black.png
 /favicon.ico
 
-http://www.w3.org/html/logo/downloads/HTML5_1Color_Black.png
-
 NETWORK:
-/index.php/site/tulemused
-/index.php/site/haaletamine
-/index.php/site/statistika
-/index.php/site/login
-/index.php/site/logout
-/index.php/site/isikuandmed
-/index.php/site/registreeri
+/site/tulemused
+/site/haaletamine
+/site/statistika
+/site/login
+/site/logout
+/site/isikuandmed
+/site/registreeri

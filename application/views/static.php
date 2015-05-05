@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="<?php echo base_url(); ?>manifest.appcache">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -64,24 +64,24 @@ $(document).ready(function() {
 
 		<div class="btn-group" role="group" aria-label="...">
   			<a href="http://ev2015.cs.ut.ee/" class="btn btn-default" role="button">Esileht</a>
-  			<a href="http://ev2015.cs.ut.ee/index.php/site/nimekiri" class="btn btn-default" role="button">Nimekiri</a>
-  			<a href="http://ev2015.cs.ut.ee/index.php/site/tulemused" class="btn btn-default" role="button">Tulemused</a>
-			<a href="http://ev2015.cs.ut.ee/index.php/site/statistika" class="btn btn-default" role="button">Statistika</a>
-			<a href="http://ev2015.cs.ut.ee/index.php/site/haaletamine" class="btn btn-default" role="button">Hääletamine</a>
+  			<a href="http://ev2015.cs.ut.ee/site/nimekiri" class="btn btn-default" role="button">Nimekiri</a>
+  			<a href="http://ev2015.cs.ut.ee/site/tulemused" class="btn btn-default" role="button">Tulemused</a>
+			<a href="http://ev2015.cs.ut.ee/site/statistika" class="btn btn-default" role="button">Statistika</a>
+			<a href="http://ev2015.cs.ut.ee/site/haaletamine" class="btn btn-default" role="button">Hääletamine</a>
 		</div>
 		<?php if($this->session->userdata('is_logged_in') == false) {?>
 			<div class="btn-group pull-right" role="group" aria-label="...">
-				<a href="http://ev2015.cs.ut.ee/index.php/site/login" class="btn btn-default" role="button">Logi sisse</a>
+				<a href="http://ev2015.cs.ut.ee/site/login" class="btn btn-default" role="button">Logi sisse</a>
 			</div>
 			<div class="btn-group pull-right" role="group" aria-label="...">
-				<a href="http://ev2015.cs.ut.ee/index.php/site/registreeri" class="btn btn-default" role="button">Registreeri</a>
+				<a href="http://ev2015.cs.ut.ee/site/registreeri" class="btn btn-default" role="button">Registreeri</a>
 			</div>
 		<?php } else {?>
 			<div class="btn-group pull-right" role="group" aria-label="...">
-				<a href="http://ev2015.cs.ut.ee/index.php/site/logout" class="btn btn-default" role="button">Logi välja</a>
+				<a href="http://ev2015.cs.ut.ee/site/logout" class="btn btn-default" role="button">Logi välja</a>
 			</div>
 			<div class="btn-group pull-right" role="group" aria-label="...">
-				<a href="http://ev2015.cs.ut.ee/index.php/site/isikuandmed" class="btn btn-default" role="button">Isikuandmed</a>
+				<a href="http://ev2015.cs.ut.ee/site/isikuandmed" class="btn btn-default" role="button">Isikuandmed</a>
 			</div>
 		<?php } ?>
 

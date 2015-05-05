@@ -26,7 +26,7 @@ $config['base_url']	= 'http://ev2015.cs.ut.ee/';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = 'index.php';
+$config['index_page'] = '';
 
 /*
 |--------------------------------------------------------------------------
