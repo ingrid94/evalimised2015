@@ -28,8 +28,8 @@
 		<script>
 $(document).ready(function() {
     // Setup - add a text input to each footer cell
-    $('table.display tfoot th').each( function () {
-        var title = $('table.display thead th').eq( $(this).index() ).text();
+    $('#nimekiri_tabel tfoot th').each( function () {
+        var title = $('#nimekiri_tabel thead th').eq( $(this).index() ).text();
         $(this).html( '<input type="text" placeholder="'+title+'">' );
     } );
  

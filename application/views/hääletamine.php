@@ -2,8 +2,9 @@
 	<h1>Hääletamine</h1>
 	<p>Hääletamiseks märgi sobiva kandidaadi ees ring</p>
 	<table id="haaletamine_tabel" class="display" cellspacing="0" width="100%">
-	<thead>
+		<thead>
       	<tr>
+			<th>Vali!</th>
         	<th>Kandidaadi number</th>
         	<th>Partei nimi</th>
        		<th>Kandidaadi perenimi</th>
@@ -12,19 +13,10 @@
       	</tr>
    	</thead>
 
-	<tfoot>
-      	<tr>
-  			<th>Kandidaadi number</th>
-        	<th>Partei nimi</th>
-        	<th>Kandidaadi perenimi</th>
-			<th>Kandidaadi eesnimi</th>
-			<th>Kandidaadi kirjeldus</th>
-      	</tr>
-    </tfoot>
-
-	<tbody>
+	<tbody><form>
 		<?php foreach($region as $row){?>
 			<tr>
+				<td><input type="radio" name="vali" value="<?php echo $row->CandId;?>"></td>
 				<td><?php echo $row->CandId;?></td>
 				<td><?php echo $row->FraNa;?></td>
 				<td><?php echo $row->LName;?></td>
@@ -32,6 +24,6 @@
 				<td><?php echo $row->Descript;?></td>
 			</tr>     
 		<?php }?>
-	</tbody>
+	</form></tbody>
 </table>
 </div>
