@@ -25,11 +25,9 @@
 					<td><?php echo $row->Descript;?></td>
 				</tr>     
 			<?php }?>
+			<input type="submit" value="Vali!">
 			</form>
 		</tbody>
 	</table>
-	<div class="btn-group" role="group" aria-label="...">
-  		<a href="http://ev2015.cs.ut.ee/index.php/site/nimekiri" class="btn btn-default" role="button">Hääleta!</a>
-	</div>
 </div>
 
