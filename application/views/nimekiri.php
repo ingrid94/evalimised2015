@@ -7,23 +7,23 @@
 		<title>E-valimised2015</title>
 
 		<!--Bootstrap - Selles failis on validatori jaoks mõned asjad välja kommenteeritud-->
-		<link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>assets/css/bootstrap.min.css" rel="stylesheet">
 		<!--DataTables CSS-->
-		<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>assets/css/jquery.dataTables.min.css" rel="stylesheet">
 		<!--Custom CSS - enda kirjutatud css-->
-		<link href="<?php echo base_url(); ?>assets/css/custom.css" rel="stylesheet">
-		<!--Custom JavaScript - enda kirjutatud javascript-->
-		<script src="<?php echo base_url(); ?>assets/js/custom.js"></script>
+		<link href="<?php echo base_url(); ?>assets/css/custom.min.css" rel="stylesheet">
+		<!--Custom JavaScript - enda kirjutatud javascript - praegu tühi, jääb projekti arhidetkuuri säilitamiseks.-->
+		<!--<script async src="<?php echo base_url(); ?>assets/js/custom.js"></script>-->
 		
 		<!--JQuery-->
-		<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script>
+		<script async src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script>
 		
 		
 		<!--JQuery tablesorter plugin-->
 		<!--<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>-->
   
 		<!--JQuery DataTables plugin-->
-		<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.js"></script>
+		<script async src="<?php echo base_url(); ?>assets/js/jquery.dataTables.js"></script>
 
 		<script>
 $(document).ready(function() {
