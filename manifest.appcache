@@ -3,10 +3,10 @@ CACHE MANIFEST
 
 /site/nimekiri
 
-/assets/css/bootstrap.css
+/assets/css/bootstrap.min.css
 /assets/css/bootstrap.css.map
-/assets/css/jquery.dataTables.css
-/assets/css/custom.css
+/assets/css/jquery.dataTables.min.css
+/assets/css/custom.min.css
 
 /assets/js/custom.js
 /assets/js/jquery-1.11.2.js
