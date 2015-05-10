@@ -1,0 +1,24 @@
+import junit.framework.Test;
+import junit.framework.TestSuite;
+
+public class Test_java {
+
+	public static Test suite() {
+		TestSuite suite = new TestSuite();
+		suite.addTestSuite(Registreerimine.class);
+		suite.addTestSuite(Sisselogimine.class);
+		suite.addTestSuite(Isikuandmete muutmine.class);
+		suite.addTestSuite(Kandidaadiks lisamine.class);
+		suite.addTestSuite(Sisselogituna lehel liikumine.class);
+		suite.addTestSuite(Välja logimine.class);
+		suite.addTestSuite(väljalogituna lehel liikumine.class);
+		suite.addTestSuite(Ebaõnnestunud registreerimine.class);
+		suite.addTestSuite(Ebaõnnestunud sisse logimine.class);
+		suite.addTestSuite(Ebaõnnestunud isikuandmete muutmine.class);
+		return suite;
+	}
+
+	public static void main(String[] args) {
+		junit.textui.TestRunner.run(suite());
+	}
+}

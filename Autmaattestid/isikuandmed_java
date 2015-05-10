@@ -1,0 +1,55 @@
+package com.example.tests;
+
+import com.thoughtworks.selenium.Selenium;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import java.util.regex.Pattern;
+import static org.apache.commons.lang3.StringUtils.join;
+
+public class isikuandmete_muutmine {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		WebDriver driver = new FirefoxDriver();
+		String baseUrl = "http://ev2015.cs.ut.ee/";
+		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+	}
+
+	@Test
+	public void testIsikuandmete_muutmine() throws Exception {
+		selenium.click("link=Esileht");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("link=Logi sisse");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("name=Username", "test19");
+		selenium.type("name=Password", "test");
+		selenium.click("name=login_submit");
+		selenium.waitForPageToLoad("30000");
+		selenium.open("/site/index");
+		selenium.click("link=Isikuandmed");
+		selenium.waitForPageToLoad("30000");
+		assertEquals("Isikuandmed", selenium.getText("css=#isikuandmed > h1"));
+		selenium.type("name=Forename", "Test");
+		selenium.type("name=LastName", "Test");
+		selenium.type("name=Region", "Harjumaa");
+		selenium.type("name=Birthday", "1894-05-10");
+		selenium.click("name=Signup_submit");
+		selenium.waitForPageToLoad("30000");
+		assertEquals("Eesnimi: Test\n Perenimi: Test\n Piirkond: Harjumaa\n Sünnipäev: 1894-05-10", selenium.getText("css=p"));
+		selenium.click("link=Logi välja");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("link=Esileht");
+		selenium.waitForPageToLoad("30000");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		selenium.stop();
+	}
+}

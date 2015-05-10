@@ -1,0 +1,45 @@
+package com.example.tests;
+
+import com.thoughtworks.selenium.Selenium;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import java.util.regex.Pattern;
+import static org.apache.commons.lang3.StringUtils.join;
+
+public class sisselogimine {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		WebDriver driver = new FirefoxDriver();
+		String baseUrl = "http://ev2015.cs.ut.ee/";
+		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+	}
+
+	@Test
+	public void testSisselogimine() throws Exception {
+		selenium.open("/");
+		selenium.click("link=Logi sisse");
+		selenium.waitForPageToLoad("30000");
+		assertEquals("Login", selenium.getText("css=#login > h1"));
+		selenium.type("name=Username", "testtest");
+		selenium.type("name=Password", "test");
+		selenium.click("name=login_submit");
+		selenium.waitForPageToLoad("30000");
+		assertEquals("Tere tulemast!", selenium.getText("css=#esileht > h1"));
+		selenium.click("link=Logi välja");
+		selenium.waitForPageToLoad("30000");
+		selenium.click("link=Esileht");
+		selenium.waitForPageToLoad("30000");
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		selenium.stop();
+	}
+}

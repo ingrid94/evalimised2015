@@ -1,0 +1,47 @@
+package com.example.tests;
+
+import com.thoughtworks.selenium.Selenium;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.WebDriver;
+import com.thoughtworks.selenium.webdriven.WebDriverBackedSelenium;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+import java.util.regex.Pattern;
+import static org.apache.commons.lang3.StringUtils.join;
+
+public class Kandidaadiks lisamine {
+	private Selenium selenium;
+
+	@Before
+	public void setUp() throws Exception {
+		WebDriver driver = new FirefoxDriver();
+		String baseUrl = "http://ev2015.cs.ut.ee/";
+		selenium = new WebDriverBackedSelenium(driver, baseUrl);
+	}
+
+	@Test
+	public void testKandidaadiks lisamine() throws Exception {
+		selenium.click("link=Logi sisse");
+		selenium.waitForPageToLoad("30000");
+		selenium.type("name=Username", "test19");
+		selenium.type("name=Password", "test");
+		selenium.click("name=login_submit");
+		selenium.waitForPageToLoad("30000");
+		selenium.open("/site/isikuandmed");
+		selenium.click("link=Lisa kandidaatiks");
+		selenium.waitForPageToLoad("30000");
+		assertEquals("Registreeri ennast kandidaadiks", selenium.getText("css=#kandidaat > h1"));
+		selenium.type("name=Fraction", "Mõnusad");
+		selenium.type("name=Description", "Olen mõnus testija");
+		selenium.click("name=Signcandidate_submit");
+		selenium.waitForPageToLoad("30000");
+		assertEquals("Nimekiri!", selenium.getText("css=#nimekiri > h1"));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		selenium.stop();
+	}
+}

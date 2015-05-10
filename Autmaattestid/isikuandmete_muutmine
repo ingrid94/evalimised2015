@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://ev2015.cs.ut.ee/" />
+<title>Isikuandmete muutmine</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Isikuandmete muutmine</td></tr>
+</thead><tbody>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Esileht</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logi sisse</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=Username</td>
+	<td>test19</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=Password</td>
+	<td>test</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=login_submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/site/index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Isikuandmed</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=#isikuandmed &gt; h1</td>
+	<td>Isikuandmed</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=Forename</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=LastName</td>
+	<td>Test</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=Region</td>
+	<td>Harjumaa</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>name=Birthday</td>
+	<td>1894-05-10</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=Signup_submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=p</td>
+	<td>Eesnimi: Test<br /> Perenimi: Test<br /> Piirkond: Harjumaa<br /> Sünnipäev: 1894-05-10</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Logi välja</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Esileht</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
