@@ -9,6 +9,8 @@ CACHE MANIFEST
 /assets/css/custom.min.css
 
 /assets/js/custom.js
+/assets/js/jquery-1.11.2.min.js
+/assets/js/jquery.dataTables.min.js
 /assets/js/jquery-1.11.2.js
 /assets/js/jquery.dataTables.js
 

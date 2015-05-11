@@ -16,14 +16,14 @@
 		<!--<script async src="<?php echo base_url(); ?>assets/js/custom.js"></script>-->
 		
 		<!--JQuery-->
-		<script async src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery-1.11.2.min.js"></script>
 		
 		
 		<!--JQuery tablesorter plugin-->
 		<!--<script src="<?php echo base_url(); ?>assets/js/jquery.tablesorter.js"></script>-->
   
 		<!--JQuery DataTables plugin-->
-		<script async src="<?php echo base_url(); ?>assets/js/jquery.dataTables.js"></script>
+		<script src="<?php echo base_url(); ?>assets/js/jquery.dataTables.min.js"></script>
 
 		<script>
 $(document).ready(function() {
