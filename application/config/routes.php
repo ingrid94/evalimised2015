@@ -39,6 +39,14 @@
 */
 
 $route['default_controller'] = "site";
+$route['nimekiri'] = 'site/nimekiri';
+$route['tulemused'] = 'site/tulemused';
+$route['statistika'] = 'site/statistika';
+$route['registreeri'] = 'site/registreeri';
+$route['haaletamine'] = 'site/haaletamine';
+$route['login'] = 'site/login';
+$route['logout'] = 'site/logout';
+$route['isikuandmed'] = 'site/isikuandmed';
 $route['404_override'] = '';
 
 
