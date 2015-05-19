@@ -25,6 +25,7 @@ Header set Cache-Control "max-age=604800, public"
 Header set Cache-Control "max-age=604800, private"
 </filesMatch>
 <filesMatch ".(x?html?)$">
+
 Header set Cache-Control "max-age=600, private, must-revalidate"
 </filesMatch>
 </ifModule>
